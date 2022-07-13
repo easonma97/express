@@ -1,4 +1,4 @@
-const express = require(express);
+const express = require('express');
 const {
     getAllTask,
     getTaskById,
@@ -9,7 +9,7 @@ const {
 const checkTaskExist = require('../middleware/checkTaskExist');
 const parseId = require('../middleware/parseId');
 
-const router = express.router();
+const router = express.Router();
 
 router.get('', getAllTask);
 
