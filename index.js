@@ -41,7 +41,10 @@ app.put('/tasks/:id', (req, res) => {
 });
 app.get('/tasks', (req, res) => {
     const {description} = req.query;
-    console.log(description);
+    if (description) {
+        const filteredTasks = data.filter((i) => i.description.includes(description));
+        return res.json(filteredTasks);
+    }
     res.status(200).send(data);
 });
 app.get('/tasks/:id', (req, res) => {
